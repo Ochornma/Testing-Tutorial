@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Testing Tutorial</string>
+    <string name="image_of_item_bought">Image of item bought</string>
 </resources>
