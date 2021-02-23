@@ -1,7 +1,8 @@
-package com.ivorycloud.testingtutorial
+package com.ivorycloud.testingtutorial.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ivorycloud.testingtutorial.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
