@@ -2,10 +2,13 @@ package com.ivorycloud.testingtutorial.di
 
 import android.content.Context
 import androidx.room.Room
+import com.ivorycloud.testingtutorial.local.data.ShoppingDao
 import com.ivorycloud.testingtutorial.other.Constants.BASE_URL
 import com.ivorycloud.testingtutorial.other.Constants.DATABASE_NAME
 import com.ivorycloud.testingtutorial.local.data.ShoppingItemDatabase
 import com.ivorycloud.testingtutorial.local.remote.PixabayAPI
+import com.ivorycloud.testingtutorial.repository.DefaultShoppingRepository
+import com.ivorycloud.testingtutorial.repository.ShoppingRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +22,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideDefaultShoppingRepository(
+        dao: ShoppingDao,
+        api: PixabayAPI
+    ) = DefaultShoppingRepository(dao, api) as ShoppingRepository
 
 
     @Singleton
