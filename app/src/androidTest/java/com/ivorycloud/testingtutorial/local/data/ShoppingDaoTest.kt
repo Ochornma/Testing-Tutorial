@@ -7,6 +7,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.ivorycloud.testingtutorial.getOrAwaitValue
+import com.ivorycloud.testingtutorial.launchFragmentInHiltContainer
+import com.ivorycloud.testingtutorial.ui.ShoppingFragment
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -45,6 +47,13 @@ class ShoppingDaoTest {
     @After
     fun teardown() {
         database.close()
+    }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer() {
+        launchFragmentInHiltContainer<ShoppingFragment> {
+
+        }
     }
 
     @Test
